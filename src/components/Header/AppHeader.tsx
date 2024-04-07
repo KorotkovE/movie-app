@@ -1,5 +1,6 @@
-import './AppHeader.scss';
 import { NavLink } from 'react-router-dom';
+import { SearchBar } from './SearchBar';
+import './AppHeader.scss';
 
 export function AppHeader() {
   return (
@@ -7,9 +8,12 @@ export function AppHeader() {
       <nav className="header_nav">
         <div>
           <span className="header_nav_logo">
-            <h1 className="header_nav_logo_name">Movie App</h1>
+            <NavLink to="/home-page" className="header_nav_logo_name">
+              Movie App
+            </NavLink>
           </span>
         </div>
+        <SearchBar />
         <nav>
           <ul className="nav">
             <li>

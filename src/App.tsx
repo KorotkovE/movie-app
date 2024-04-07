@@ -1,13 +1,18 @@
 import { AppHeader } from './components/Header/AppHeader';
 import { HomePage } from './components/Pages/HomePage/HomePage';
-import './App.css';
+import { FilmPage } from './components/Pages/FilmPage/FilmPage';
+import { Route, Routes, Navigate } from 'react-router';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <AppHeader />
-      <HomePage />
-    </div>
+      <Routes>
+        <Route path="/home-page" element={<HomePage />} />
+        <Route path="/film/:id" element={<FilmPage />} />
+        <Route path="*" element={<Navigate replace to="/home-page" />} />
+      </Routes>
+    </>
   );
 }
 

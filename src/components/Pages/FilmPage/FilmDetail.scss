@@ -1,0 +1,30 @@
+.filmPage {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1700px;
+
+  &_name {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &_detail {
+    padding-left: 20px;
+  }
+
+  &_card {
+  }
+
+  &_poster {
+    display: flex;
+    height: 600px;
+  }
+  &_description {
+    display: flex;
+    padding-bottom: 10px;
+  }
+
+  &_ratingKinopoisk {
+    display: flex;
+    padding-top: 10px;
+  }
+}

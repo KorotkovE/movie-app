@@ -6,13 +6,16 @@ export function HomePage() {
   const { data: movies } = useQuery({
     queryKey: ['films'],
     queryFn: movieService,
+    refetchOnWindowFocus: false,
   });
 
   return (
-    <div>
-      {movies?.releases?.map((movie) => (
-        <FilmCard film={movie} key={movie.filmId} />
-      ))}
-    </div>
+    <>
+      <div>
+        {movies?.items?.map((movie) => (
+          <FilmCard film={movie} key={movie.kinopoiskId} />
+        ))}
+      </div>
+    </>
   );
 }

@@ -1,0 +1,57 @@
+.filmList {
+  display: flex;
+  margin: 0 auto;
+  width: 800px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+
+  &_name {
+    display: flex;
+    font-size: 25px;
+  }
+
+  &_nameRu {
+    text-decoration: none;
+    color: black;
+  }
+
+  &_poster {
+    display: inline-flex;
+    align-self: flex-start;
+    width: 200px;
+    margin-left: 0;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  &_info {
+    display: flex;
+    padding-bottom: 10px;
+  }
+
+  &_info_nameEn {
+    padding-right: 5px;
+  }
+
+  &_card {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  &_filmInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_country {
+    padding: 5px;
+  }
+
+  &_genre {
+    padding: 5px;
+  }
+}

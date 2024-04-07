@@ -1,11 +1,12 @@
 .header_nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-width: 100%;
   background-color: #444444;
   border: 1px solid;
   height: 50px;
+  margin-bottom: 30px;
 
   &_logo {
     display: flex;
@@ -17,6 +18,7 @@
 
   &_logo_name {
     text-decoration: none;
+    color: white;
   }
 }
 
@@ -34,4 +36,57 @@
     padding: 10px 15px;
     border-radius: 10px;
   }
+}
+
+.search {
+  position: relative;
+  width: 560px;
+
+  &_input {
+    border-width: 1px;
+    padding: 2px 4px;
+    width: 70.5%;
+    height: 30px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  &_loading {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+  }
+}
+
+.dropdown_search {
+  list-style: none;
+  position: absolute;
+  margin: 0 auto;
+  width: 65%;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid;
+  background: white;
+}
+
+.search_result {
+  display: flex;
+  font-size: 15px;
+}
+
+.search_info {
+  margin-left: 10px;
+}
+
+.search_name {
+  display: flex;
+  padding-top: 16px;
+  margin-bottom: 5px;
+}
+
+.poster_search {
+  width: 170px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
