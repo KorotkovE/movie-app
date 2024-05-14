@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { searchFilms } from '../../service/movie.api';
 import { SearchDeatail } from './SearchDetail';
-import { Debounce } from '../hooks/Debounce';
+import { debounce } from 'lodash-es';
 import './AppHeader.scss';
 
 export function SearchBar() {
@@ -31,10 +31,12 @@ export function SearchBar() {
     setSearch(e.currentTarget.value);
   };
 
+  const debounceOnChange = debounce(() => onSearch(search), 400);
+
   useEffect(() => {
     if (!search) return;
-    Debounce(onSearch(search), 3000);
-  }, [search, onSearch]);
+    debounceOnChange();
+  }, [search]);
 
   return (
     <>

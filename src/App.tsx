@@ -1,17 +1,21 @@
-import { AppHeader } from './components/Header/AppHeader';
-import { HomePage } from './components/Pages/HomePage/HomePage';
-import { FilmPage } from './components/Pages/FilmPage/FilmPage';
-import { Route, Routes, Navigate } from 'react-router';
+import AuthContext from './context/AuthContext';
+import { useAuth } from './components/hooks/Auth.hook';
+import { useRoutes } from './routes';
 
 function App() {
+  const auth = useAuth();
+  const routes = useRoutes(!!auth?.token);
+
+  if (!auth) {
+    return <span>Нет доступа</span>;
+  }
+
+  const { login, logout, token, userId } = auth;
   return (
     <>
-      <AppHeader />
-      <Routes>
-        <Route path="/home-page" element={<HomePage />} />
-        <Route path="/film/:id" element={<FilmPage />} />
-        <Route path="*" element={<Navigate replace to="/home-page" />} />
-      </Routes>
+      <AuthContext.Provider value={{ login, logout, token, userId, isAuthenticated: !!token }}>
+        {routes}
+      </AuthContext.Provider>
     </>
   );
 }

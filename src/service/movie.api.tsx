@@ -19,11 +19,14 @@ export async function filmPage(filmId?: string | number): Promise<FilmPage> {
     headers: headers,
   }).then((res) => res.json());
 }
-export async function movieReleases(): Promise<ServerResponse> {
-  return await fetch(_APIBase + _APIVersion.v21 + `/films/releases?year=2024&month=APRIL&page=1`, {
-    method: 'GET',
-    headers: headers,
-  }).then((res) => res.json());
+export async function movieReleases(pages: string | null): Promise<ServerResponse> {
+  return await fetch(
+    _APIBase + _APIVersion.v21 + `/films/releases?year=2024&month=MARCH&page=${pages}`,
+    {
+      method: 'GET',
+      headers: headers,
+    },
+  ).then((res) => res.json());
 }
 export async function movieService(): Promise<GetFilms> {
   return await fetch(

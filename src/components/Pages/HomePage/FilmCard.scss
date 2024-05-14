@@ -14,6 +14,7 @@
   &_nameRu {
     text-decoration: none;
     color: black;
+    padding-right: 5px;
   }
 
   &_poster {
@@ -42,16 +43,16 @@
     margin-top: 10px;
   }
 
-  &_filmInfo {
-    display: flex;
-    flex-direction: column;
-  }
-
   &_country {
     padding: 5px;
   }
 
   &_genre {
     padding: 5px;
+  }
+
+  &_rating {
+    height: 100%;
+    font-size: 20px;
   }
 }

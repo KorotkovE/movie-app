@@ -1,30 +1,75 @@
 .filmPage {
   display: flex;
   margin: 0 auto;
-  max-width: 1700px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 
   &_name {
     display: flex;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 5px;
   }
+
+  &_nameOr {
+    display: flex;
+    font-size: 20px;
+  }
+
   &_detail {
     padding-left: 20px;
   }
 
   &_card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &_type {
+      display: flex;
+      padding-bottom: 10px;
+    }
+
+    &_typeSize {
+      width: 400px;
+    }
+
+    &_length {
+      display: flex;
+      padding-bottom: 10px;
+    }
+
+    &_lengthSize {
+      width: 400px;
+    }
+
+    &_rating {
+      display: flex;
+      padding-bottom: 10px;
+    }
+    &_ratingSize {
+      width: 400px;
+    }
+
+    &_genre {
+      display: flex;
+    }
+
+    &_genreSize {
+      width: 400px;
+    }
   }
 
   &_poster {
     display: flex;
-    height: 600px;
-  }
-  &_description {
-    display: flex;
-    padding-bottom: 10px;
+    flex-direction: column;
+    height: 400px;
   }
 
-  &_ratingKinopoisk {
+  &_description {
     display: flex;
     padding-top: 10px;
+    position: absolute;
+    width: 50%;
   }
 }

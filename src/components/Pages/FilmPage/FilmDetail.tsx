@@ -20,16 +20,24 @@ export function FilmDetail({ movies }: { movies: FilmPage }) {
 
   const genreMap = genres.map((genre) => {
     return (
-      <span key={genre} className="movies_genre">
+      <span key={genre} className="filmPage_card_genre">
         {genre}
       </span>
     );
   });
 
-  const ageLimits = {
-    age16: '+16',
-    age18: '+18',
-    age21: '+21',
+  const ageLimits: Record<string, string> = {
+    age16: '16+',
+    age18: '18+',
+    age21: '21+',
+  };
+
+  const moviesType: Record<string, string> = {
+    FILM: 'Фильм',
+    TV_SERIES: 'Сериал',
+    MINI_SERIES: 'Мини серал',
+    VIDEO: 'Видео',
+    TV_SHOW: 'ТВ ШОУ',
   };
 
   return (
@@ -37,20 +45,28 @@ export function FilmDetail({ movies }: { movies: FilmPage }) {
       <div className="filmPage">
         <div>
           <img className="filmPage_poster" src={movies.posterUrl} alt="poster" />
+          <span className="filmPage_description">{movies.description}</span>
         </div>
         <div className="filmPage_detail">
-          <span className="filmPage_name">
-            {movies.nameRu}({movies.year})
-          </span>
+          <span className="filmPage_ratingKinopoisk">{movies.ratingKinopoisk}/10</span>
+          <span className="filmPage_name">{movies.nameRu}</span>
+          <span className="filmPage_nameOr">{movies.nameOriginal}</span>
           <div className="filmPage_card">
-            <div>
-              <span className="filmPage_description">{movies.description}</span>
+            <div className="filmPage_card_type">
+              <span className="filmPage_card_typeSize">Тип: </span>
+              <span>{moviesType[movies.type]}</span>
             </div>
-            <div>
-              <span className="filmPage_filmLengthr">Длительность {movies.filmLength} мин.</span>
+            <div className="filmPage_card_length">
+              <span className="filmPage_card_lengthSize">Длительность: </span>
+              <span>{movies.filmLength} мин.</span>
             </div>
-            <div>
-              <span className="filmPage_ratingKinopoisk">{movies.ratingKinopoisk}</span>
+            <div className="filmPage_card_rating">
+              <span className="filmPage_card_ratingSize">Ограничение: </span>
+              <span>{ageLimits[movies.ratingAgeLimits]}</span>
+            </div>
+            <div className="filmPage_card_genre">
+              <span className="filmPage_card_genreSize">Жанр: </span>
+              <span>{genreMap}</span>
             </div>
           </div>
         </div>

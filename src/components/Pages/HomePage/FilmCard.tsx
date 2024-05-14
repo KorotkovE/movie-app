@@ -1,8 +1,8 @@
-import { IFilm } from '../../../models/models';
+import { IRelease } from '../../../models/models';
 import { NavLink } from 'react-router-dom';
 import './FilmCard.scss';
 
-export function FilmCard({ film }: { film: IFilm }) {
+export function FilmCard({ film }: { film: IRelease }) {
   const count = (film?.countries || []).map((count) => {
     return count.country;
   });
@@ -29,16 +29,17 @@ export function FilmCard({ film }: { film: IFilm }) {
       <img className="filmList_poster" src={film.posterUrl} alt="poster" />
       <div className="filmList_card">
         <span className="filmList_name">
-          <NavLink to={`/film/${film.kinopoiskId}`} className="filmList_nameRu">
+          <NavLink to={`/film/${film.filmId}`} className="filmList_nameRu">
             {film.nameRu}
           </NavLink>
+          <div className="filmList_rating">{film.rating}</div>
         </span>
         <div className="filmList_info">
           <span className="filmList_info_nameEn">{film.nameEn}</span>
           <span className="filmList_info_year">{film.year}</span>
         </div>
         <div className="filmList_filmInfo">
-          <span className="filmList_filmInfo_count">{countMap}</span>
+          <span className="filmList_filmInfo_count">{countMap[0]}</span>
         </div>
       </div>
     </div>
