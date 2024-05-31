@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { movieReleases } from '../../../service/movie.api';
 import { useSearchParams } from 'react-router-dom';
 import { FilmCard } from './FilmCard';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import './FilmCard';
 
 export function HomePage() {
   const [searchParams, setSearchParams] = useSearchParams({ pages: '1' });
@@ -26,11 +28,16 @@ export function HomePage() {
         {movies?.releases?.map((movie) => (
           <FilmCard film={movie} key={movie.filmId} />
         ))}
-        <div>
-          <button onClick={prevPage} disabled={searchParams.get('pages') === '1'}>
-            Назад
+        <div className="btn_page">
+          <button
+            className="btn_page_prev"
+            onClick={prevPage}
+            disabled={searchParams.get('pages') === '1'}>
+            <LeftOutlined />
           </button>
-          <button onClick={nextPage}>Следующая</button>
+          <button className="btn_page_next" onClick={nextPage}>
+            <RightOutlined className="btn_page_next" />
+          </button>
         </div>
       </div>
     </>

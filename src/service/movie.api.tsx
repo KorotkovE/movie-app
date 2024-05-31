@@ -1,4 +1,11 @@
-import { ServerResponse, GetFilms, ServerSearch, FilmPage } from '../models/models';
+import {
+  ServerResponse,
+  GetFilms,
+  ServerSearch,
+  FilmPage,
+  Iimages,
+  GetImages,
+} from '../models/models';
 
 const _APIBase = new URL('https://kinopoiskapiunofficial.tech/api/');
 
@@ -21,7 +28,7 @@ export async function filmPage(filmId?: string | number): Promise<FilmPage> {
 }
 export async function movieReleases(pages: string | null): Promise<ServerResponse> {
   return await fetch(
-    _APIBase + _APIVersion.v21 + `/films/releases?year=2024&month=MARCH&page=${pages}`,
+    _APIBase + _APIVersion.v21 + `/films/releases?year=2024&month=MAY&page=${pages}`,
     {
       method: 'GET',
       headers: headers,
@@ -45,4 +52,10 @@ export async function searchFilms(filmName: string | number): Promise<ServerSear
       headers: headers,
     },
   ).then((res) => res.json());
+}
+export async function movieImage(id?: string | number): Promise<GetImages> {
+  return await fetch(_APIBase + _APIVersion.v22 + `/films/${id}/images?type=STILL&page=1`, {
+    method: 'GET',
+    headers: headers,
+  }).then((res) => res.json());
 }

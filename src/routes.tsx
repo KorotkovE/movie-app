@@ -4,6 +4,7 @@ import { FilmPage } from './components/Pages/FilmPage/FilmPage';
 import { AuthPage } from './components/Pages/AuthPage/AuthPage';
 import { AppHeader } from './components/Header/AppHeader';
 import { RegisterPage } from './components/Pages/AuthPage/RegisterPage';
+import { AccountPage } from './components/Pages/AccountPage/AccountPage';
 
 export const useRoutes = (isAuthenticated: boolean) => {
   if (isAuthenticated) {
@@ -13,11 +14,13 @@ export const useRoutes = (isAuthenticated: boolean) => {
         <Routes>
           <Route path="/home-page" element={<HomePage />} />
           <Route path="/film/:id" element={<FilmPage />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="*" element={<Navigate replace to="/home-page" />} />
         </Routes>
       </>
     );
   }
+
   return (
     <>
       <Routes>

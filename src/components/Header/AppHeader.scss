@@ -4,7 +4,8 @@
   align-items: center;
   max-width: 100%;
   background-color: #444444;
-  border: 1px solid;
+  border-bottom: 2px solid;
+  border-color: black;
   height: 50px;
   margin-bottom: 30px;
 
@@ -31,6 +32,7 @@
 
   &_btn {
     font-size: 15px;
+    margin-right: 5px;
     background-color: gray;
     color: white;
     text-decoration: none;

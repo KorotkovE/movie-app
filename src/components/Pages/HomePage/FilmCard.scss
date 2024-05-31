@@ -56,3 +56,19 @@
     font-size: 20px;
   }
 }
+
+.btn_page {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+
+  &_prev {
+    color: black;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  &_next {
+    color: black;
+    cursor: pointer;
+  }
+}

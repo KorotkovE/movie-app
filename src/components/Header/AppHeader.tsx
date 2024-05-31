@@ -1,8 +1,19 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { SearchBar } from './SearchBar';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 import './AppHeader.scss';
 
 export function AppHeader() {
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const loguotHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    auth.logout();
+    navigate('/');
+  };
+
   return (
     <>
       <nav className="header_nav">
@@ -17,10 +28,10 @@ export function AppHeader() {
         <nav>
           <ul className="nav">
             <li>
-              <NavLink to="/" className="nav_btn">
+              <NavLink to="/account" className="nav_btn">
                 Аккаунт
               </NavLink>
-              <NavLink to="/" className="nav_btn">
+              <NavLink to="/" className="nav_btn" onClick={loguotHandler}>
                 Выход
               </NavLink>
             </li>

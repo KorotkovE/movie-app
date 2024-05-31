@@ -4,6 +4,7 @@ import { login } from '../../../service/auth';
 import AuthContext from '../../../context/AuthContext';
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
+import { Link } from 'react-router-dom';
 
 type FieldType = {
   username?: string;
@@ -78,6 +79,7 @@ export const AuthPage = () => {
           <Button type="primary" htmlType="submit" onClick={loginHandler}>
             Submit
           </Button>
+          <Link to="/registration">Sign up</Link>
         </Form.Item>
       </Form>
     </div>

@@ -9,6 +9,7 @@ export function FilmPage() {
   const { data: getFilmPage, refetch } = useQuery({
     queryKey: ['getFilm'],
     queryFn: () => filmPage(id),
+    refetchOnWindowFocus: false,
   });
 
   useEffect(() => {
@@ -17,5 +18,5 @@ export function FilmPage() {
     }
   }, [id, refetch]);
 
-  return getFilmPage ? <FilmDetail movies={getFilmPage} /> : null;
+  return <>{getFilmPage && <FilmDetail movies={getFilmPage} />}</>;
 }

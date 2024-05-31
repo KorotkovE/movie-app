@@ -6,6 +6,7 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 
 type FieldType = {
+  email?: string;
   username?: string;
   password?: string;
 };
@@ -55,10 +56,16 @@ export const RegisterPage = () => {
         onFinishFailed={onFinishFailed}
         autoComplete="off">
         <Form.Item<FieldType>
+          label="Email"
+          name="email"
+          rules={[{ required: true, message: 'Please input your email!' }]}>
+          <Input id="email" name="email" type="text" placeholder="Email" onChange={changeHandler} />
+        </Form.Item>
+        <Form.Item<FieldType>
           label="Username"
           name="username"
           rules={[{ required: true, message: 'Please input your username!' }]}>
-          <Input id="email" name="email" type="text" placeholder="Email" onChange={changeHandler} />
+          <Input id="name" name="name" type="text" placeholder="Name" onChange={changeHandler} />
         </Form.Item>
 
         <Form.Item<FieldType>

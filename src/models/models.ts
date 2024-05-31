@@ -121,3 +121,19 @@ export interface FilmPage {
   shortFilm: boolean;
   completed: boolean;
 }
+
+export interface GetImages {
+  total: number;
+  totalPages: number;
+  items: Iimages[];
+}
+
+export interface Iimages {
+  imageUrl: string;
+  previewUrl: string;
+}
+
+export interface IProfile {
+  name: string;
+  email: string;
+}

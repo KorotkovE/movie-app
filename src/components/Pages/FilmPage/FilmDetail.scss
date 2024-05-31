@@ -1,19 +1,28 @@
+.container {
+  background-color: white;
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-color: #fff;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
 .filmPage {
   display: flex;
-  margin: 0 auto;
-  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 
   &_name {
     display: flex;
     font-size: 40px;
-    margin-bottom: 5px;
   }
 
   &_nameOr {
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
   }
 
   &_detail {
@@ -58,18 +67,51 @@
     &_genreSize {
       width: 400px;
     }
+    &_year {
+      display: flex;
+      padding-bottom: 10px;
+    }
+    &_yearSize {
+      width: 400px;
+    }
   }
 
   &_poster {
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 450px;
   }
 
   &_description {
     display: flex;
     padding-top: 10px;
     position: absolute;
-    width: 50%;
+    max-width: 55%;
   }
+}
+
+.filmPageImages {
+  max-width: 1318px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.iamgeDetail {
+  &_list {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  &_image_list {
+  }
+
+  &_img {
+    height: 200px;
+  }
+}
+
+.filmPageImg {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
 }
