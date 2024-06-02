@@ -5,6 +5,7 @@ import AuthContext from '../../../context/AuthContext';
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
+import './AuthPage';
 
 type FieldType = {
   username?: string;
@@ -49,8 +50,14 @@ export const AuthPage = () => {
       <Form
         name="basic"
         labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        style={{ maxWidth: 600 }}
+        wrapperCol={{ span: 18 }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '600px',
+        }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -75,11 +82,13 @@ export const AuthPage = () => {
           />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 12, span: 16 }}>
           <Button type="primary" htmlType="submit" onClick={loginHandler}>
             Submit
           </Button>
-          <Link to="/registration">Sign up</Link>
+          <Link to="/registration" style={{ marginLeft: '9px' }}>
+            Sign up
+          </Link>
         </Form.Item>
       </Form>
     </div>

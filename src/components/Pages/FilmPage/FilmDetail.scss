@@ -93,7 +93,6 @@
 .filmPageImages {
   max-width: 1318px;
   display: flex;
-  overflow-x: scroll;
 }
 
 .iamgeDetail {
@@ -106,12 +105,12 @@
   }
 
   &_img {
-    height: 200px;
+    height: 150px;
   }
 }
 
 .filmPageImg {
   padding-top: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }

@@ -6,7 +6,7 @@ export const ImageDetail = ({ image }: { image: Iimages }) => {
     <div className="iamgeDetail">
       <ul className="iamgeDetail_list">
         <li className="iamgeDetail_image_list">
-          <img src={image.previewUrl} alt="img" className="iamgeDetail_img" />
+          <img src={image?.previewUrl || undefined} alt="img" className="iamgeDetail_img" />
         </li>
       </ul>
     </div>

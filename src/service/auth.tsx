@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import AuthContext from '../context/AuthContext';
 import { IProfile } from '../models/models';
 
 export async function login(params: unknown) {
@@ -18,8 +16,7 @@ export async function register(params: unknown) {
   }).then((res) => res.json());
 }
 
-export async function UseProfile(): Promise<IProfile> {
-  const { token } = useContext(AuthContext);
+export async function getProfile(token: string): Promise<IProfile> {
   return await fetch('/api/auth/me', {
     method: 'GET',
     headers: { Authorization: `Bearer ${token}` },

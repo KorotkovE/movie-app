@@ -4,6 +4,7 @@ import { register } from '../../../service/auth';
 import AuthContext from '../../../context/AuthContext';
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
+import { Link } from 'react-router-dom';
 
 type FieldType = {
   email?: string;
@@ -49,8 +50,14 @@ export const RegisterPage = () => {
       <Form
         name="basic"
         labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        style={{ maxWidth: 600 }}
+        wrapperCol={{ span: 18 }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '600px',
+        }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -58,20 +65,23 @@ export const RegisterPage = () => {
         <Form.Item<FieldType>
           label="Email"
           name="email"
-          rules={[{ required: true, message: 'Please input your email!' }]}>
+          rules={[{ required: true, message: 'Please input your email!' }]}
+          style={{ width: '250px' }}>
           <Input id="email" name="email" type="text" placeholder="Email" onChange={changeHandler} />
         </Form.Item>
         <Form.Item<FieldType>
           label="Username"
           name="username"
-          rules={[{ required: true, message: 'Please input your username!' }]}>
+          rules={[{ required: true, message: 'Please input your username!' }]}
+          style={{ width: '250px' }}>
           <Input id="name" name="name" type="text" placeholder="Name" onChange={changeHandler} />
         </Form.Item>
 
         <Form.Item<FieldType>
           label="Password"
           name="password"
-          rules={[{ required: true, message: 'Please input your password!' }]}>
+          rules={[{ required: true, message: 'Please input your password!' }]}
+          style={{ width: '250px' }}>
           <Input.Password
             id="password"
             name="password"
@@ -81,10 +91,13 @@ export const RegisterPage = () => {
           />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
           <Button type="primary" htmlType="submit" onClick={registerHandler}>
             Register
           </Button>
+          <Link to="/" style={{ marginLeft: '9px' }}>
+            On Login
+          </Link>
         </Form.Item>
       </Form>
     </div>

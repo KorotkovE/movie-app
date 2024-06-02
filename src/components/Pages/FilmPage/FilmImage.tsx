@@ -20,10 +20,15 @@ export const FilmImage = () => {
   }, [id, refetch]);
 
   return (
-    <div className="filmPageImages">
-      {getImage?.items?.map((images) => (
+    <>
+      <div className="filmPageImages">
+        {/* {getImage?.items?.map((images) => (
         <ImageDetail image={images} key={images.imageUrl} />
-      ))}
-    </div>
+      ))} */}
+        {getImage && <ImageDetail image={getImage?.items[0]} />}
+        {getImage && <ImageDetail image={getImage?.items[1]} />}
+        {getImage && <ImageDetail image={getImage?.items[2]} />}
+      </div>
+    </>
   );
 };
