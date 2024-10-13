@@ -12,8 +12,7 @@
 
 .filmPage {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 17px;
 
   &_name {
     display: flex;
@@ -26,7 +25,7 @@
   }
 
   &_detail {
-    padding-left: 20px;
+    padding-left: 25px;
   }
 
   &_card {
@@ -78,7 +77,6 @@
 
   &_poster {
     display: flex;
-    flex-direction: column;
     height: 450px;
   }
 
@@ -86,12 +84,12 @@
     display: flex;
     padding-top: 10px;
     position: absolute;
-    max-width: 55%;
+    max-width: 1400px;
   }
 }
 
 .filmPageImages {
-  max-width: 1318px;
+  max-width: 1400px;
   display: flex;
 }
 
@@ -105,12 +103,12 @@
   }
 
   &_img {
-    height: 150px;
+    height: 100%;
+    width: 100%;
   }
 }
 
 .filmPageImg {
   padding-top: 100px;
   display: flex;
-  justify-content: center;
 }

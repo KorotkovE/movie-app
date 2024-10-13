@@ -134,6 +134,7 @@ export interface Iimages {
 }
 
 export interface IProfile {
+  fullname: string;
   name: string;
   email: string;
 }

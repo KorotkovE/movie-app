@@ -1,11 +1,4 @@
-import {
-  ServerResponse,
-  GetFilms,
-  ServerSearch,
-  FilmPage,
-  Iimages,
-  GetImages,
-} from '../models/models';
+import { ServerResponse, GetFilms, ServerSearch, FilmPage, GetImages } from '../models/models';
 
 const _APIBase = new URL('https://kinopoiskapiunofficial.tech/api/');
 
@@ -20,7 +13,7 @@ const _APIVersion = {
   v1: 'v1',
 };
 
-export async function filmPage(filmId?: string | number): Promise<FilmPage> {
+export async function filmPage(filmId?: string): Promise<FilmPage> {
   return await fetch(_APIBase + _APIVersion.v22 + `/films/${filmId}`, {
     method: 'GET',
     headers: headers,
@@ -28,7 +21,7 @@ export async function filmPage(filmId?: string | number): Promise<FilmPage> {
 }
 export async function movieReleases(pages: string | null): Promise<ServerResponse> {
   return await fetch(
-    _APIBase + _APIVersion.v21 + `/films/releases?year=2024&month=MAY&page=${pages}`,
+    _APIBase + _APIVersion.v21 + `/films/releases?year=2023&month=APRIL&page=${pages}`,
     {
       method: 'GET',
       headers: headers,
@@ -44,7 +37,7 @@ export async function movieService(): Promise<GetFilms> {
     },
   ).then((res) => res.json());
 }
-export async function searchFilms(filmName: string | number): Promise<ServerSearch> {
+export async function searchFilms(filmName: string): Promise<ServerSearch> {
   return await fetch(
     _APIBase + _APIVersion.v21 + `/films/search-by-keyword?keyword=${filmName}&page=1`,
     {
@@ -53,7 +46,7 @@ export async function searchFilms(filmName: string | number): Promise<ServerSear
     },
   ).then((res) => res.json());
 }
-export async function movieImage(id?: string | number): Promise<GetImages> {
+export async function movieImage(id?: string): Promise<GetImages> {
   return await fetch(_APIBase + _APIVersion.v22 + `/films/${id}/images?type=STILL&page=1`, {
     method: 'GET',
     headers: headers,

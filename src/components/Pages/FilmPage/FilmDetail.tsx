@@ -47,6 +47,7 @@ export function FilmDetail({ movies }: { movies: FilmPage }) {
         <div className="filmPage">
           <div>
             <img className="filmPage_poster" src={movies.posterUrl} alt="poster" />
+            <button style={{ marginTop: '10px' }}>Добавить в список</button>
             <span className="filmPage_description">{movies.description}</span>
           </div>
 

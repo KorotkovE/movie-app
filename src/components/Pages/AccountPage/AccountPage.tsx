@@ -5,12 +5,12 @@ import AuthContext from '../../../context/AuthContext';
 import { getProfile } from '../../../service/auth';
 
 export const AccountPage = () => {
-  const { token } = useContext(AuthContext);
+  const { token, userId } = useContext(AuthContext);
   const { data: getMeProfile } = useQuery({
     queryKey: ['getProfile'],
     queryFn: () => {
       if (token) {
-        return getProfile(token);
+        return getProfile(token, userId);
       }
     },
     enabled: !!token,

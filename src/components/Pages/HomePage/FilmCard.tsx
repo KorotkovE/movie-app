@@ -6,9 +6,10 @@ export function FilmCard({ film }: { film: IRelease }) {
   const count = (film?.countries || []).map((count) => {
     return count.country;
   });
-  const genre = (film?.genres || []).map((genres) => {
-    return genres.genre;
-  });
+
+  // const genre = (film?.genres || []).map((genres) => {
+  //   return genres.genre;
+  // });
 
   const countMap = count.map((country) => {
     return (
@@ -17,16 +18,19 @@ export function FilmCard({ film }: { film: IRelease }) {
       </p>
     );
   });
-  const genreMap = genre.map((genres) => {
-    return (
-      <p key={genres} className="filmList_genre">
-        {genres}
-      </p>
-    );
-  });
+  // const genreMap = genre.map((genres) => {
+  //   return (
+  //     <p key={genres} className="filmList_genre">
+  //       {genres}
+  //     </p>
+  //   );
+  // });
+
   return (
     <div className="filmList">
-      <img className="filmList_poster" src={film.posterUrl} alt="poster" />
+      <NavLink to={`/film/${film.filmId}`}>
+        <img className="filmList_poster" src={film.posterUrl} alt="poster" />
+      </NavLink>
       <div className="filmList_card">
         <span className="filmList_name">
           <NavLink to={`/film/${film.filmId}`} className="filmList_nameRu">

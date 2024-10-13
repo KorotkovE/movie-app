@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router';
 import { movieImage } from '../../../service/movie.api';
 import { ImageDetail } from './ImageDetail';
@@ -11,6 +11,7 @@ export const FilmImage = () => {
     queryKey: ['getImage'],
     queryFn: () => movieImage(id),
     refetchOnWindowFocus: false,
+    placeholderData: keepPreviousData,
   });
 
   useEffect(() => {

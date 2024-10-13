@@ -12,13 +12,9 @@ type FieldType = {
   password?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-  console.log('Success:', values);
-};
+const onFinish: FormProps<FieldType>['onFinish'] = (values) => {};
 
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
+const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {};
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext);

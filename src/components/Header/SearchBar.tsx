@@ -31,7 +31,7 @@ export function SearchBar() {
     setSearch(e.currentTarget.value);
   };
 
-  const debounceOnChange = debounce(() => onSearch(search), 400);
+  const debounceOnChange = debounce(() => onSearch(search), 900);
 
   useEffect(() => {
     if (!search) return;

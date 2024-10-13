@@ -16,8 +16,15 @@ export async function register(params: unknown) {
   }).then((res) => res.json());
 }
 
-export async function getProfile(token: string): Promise<IProfile> {
-  return await fetch('/api/auth/me', {
+// export async function getProfile(token: string): Promise<IProfile> {
+//   return await fetch('/api/auth/me', {
+//     method: 'GET',
+//     headers: { Authorization: `Bearer ${token}` },
+//   }).then((res) => res.json());
+// }
+
+export async function getProfile(token: string, id?: string): Promise<IProfile> {
+  return await fetch(`/api/profile/all/${id}`, {
     method: 'GET',
     headers: { Authorization: `Bearer ${token}` },
   }).then((res) => res.json());
